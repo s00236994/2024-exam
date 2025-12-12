@@ -28,6 +28,8 @@ namespace _2024_exam
             InitializeComponent();
         }
 
+        //loaded event creates events and tickets
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             #region oasis
@@ -66,6 +68,7 @@ namespace _2024_exam
 
         }
 
+        //display tickets for selected event
         private void lbxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //determinne which event is selected
@@ -84,6 +87,7 @@ namespace _2024_exam
 
         }
 
+        //book tickets button click event
         private void btnBook_Click(object sender, RoutedEventArgs e)
         {
             //read amount required
@@ -126,6 +130,7 @@ namespace _2024_exam
             }
         }
 
+        //clear search box when it gets focus
         private void tbxSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             tbxSearch.Clear();
