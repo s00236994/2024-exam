@@ -16,7 +16,12 @@ namespace _2024_exam
         public int AvailableTickets { get; set; }
 
         //constructors
-        public Ticket()
+        public Ticket() : this("")
+        {
+
+        }
+
+        public Ticket(string name) : this(name, 0m, 0)
         {
 
         }

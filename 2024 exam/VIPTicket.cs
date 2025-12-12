@@ -14,7 +14,12 @@ namespace _2024_exam
         public decimal AdditionalCost { get; set; }
 
         //constructors
-        public VIPTicket()
+        public VIPTicket() : this("")
+        {
+
+        }
+
+        public VIPTicket(string name) : this(name, 0m, 0, "", 0m)
         {
 
         }

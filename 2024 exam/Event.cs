@@ -37,6 +37,8 @@ namespace _2024_exam
         }
 
         //methods
+
+        //enables events to be sorted by date
         public int CompareTo(Event other)
         {
             return this.EventDate.CompareTo(other.EventDate);
