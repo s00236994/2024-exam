@@ -18,11 +18,23 @@ namespace _2024_exam
 
         public List <Ticket> Tickets { get; set; } 
 
-        public Event TypeOfEvent { get; set; }
-
+        public EventType TypeOfEvent { get; set; }
 
 
         //constructors
+
+        public Event()
+        {
+
+        }
+
+        public Event(string name, DateTime eventDate, List<Ticket> tickets, EventType typeOfEvent)
+        {
+            Name = name;
+            EventDate = eventDate;
+            Tickets = tickets;
+            TypeOfEvent = typeOfEvent;
+        }
 
         //methods
         public int CompareTo(Event other)
