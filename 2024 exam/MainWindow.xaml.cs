@@ -28,7 +28,9 @@ namespace _2024_exam
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //create tickets
-            Ticket
+            Ticket t1 = new Ticket("Early Bird", 100m, 100);
+            Ticket t2 = new Ticket("Platinum Ticket", 150m, 100);
+            Ticket t3 = new VIPTicket("VIP Ticket", 150m, 100);
         }
     }
 }

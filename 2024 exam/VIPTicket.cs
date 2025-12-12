@@ -14,6 +14,18 @@ namespace _2024_exam
         public decimal AdditionalCost { get; set; }
 
         //constructors
+        public VIPTicket()
+        {
+
+        }
+
+        public VIPTicket(string name, decimal price, int availableTickets, string additionalExtras, decimal additionalCost)
+            : base(name, price, availableTickets)
+
+        {
+            AdditionalCost = additionalCost;
+            AdditionalExtras = additionalExtras;
+        }
 
 
         //methods
