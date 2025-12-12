@@ -24,5 +24,11 @@ namespace _2024_exam
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //create tickets
+            Ticket
+        }
     }
 }

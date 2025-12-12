@@ -16,6 +16,19 @@ namespace _2024_exam
         public int AvailableTickets { get; set; }
 
         //constructors
+        public Ticket()
+        {
+
+        }
+
+        public Ticket(string name, decimal price, int availableTickets)
+        {
+            Name = name;
+            Price = price;
+            AvailableTickets = availableTickets;
+        }
+
+
 
         //methods
         public override string ToString()
