@@ -50,7 +50,7 @@ namespace _2024_exam
 
             List<Ticket> e2Tickets = new List<Ticket>() { t4, t5, t6, t7, t8 };
 
-            Event e2 = new Event ("Electric Picnic", new DateTime(2025, 8, 29), e2Tickets, EventType.Music);
+            Event e2 = new Event("Electric Picnic", new DateTime(2025, 8, 29), e2Tickets, EventType.Music);
 
             events.Add(e1);
             events.Add(e2);
@@ -62,6 +62,66 @@ namespace _2024_exam
 
 
 
+        }
+
+        private void lbxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //determinne which event is selected
+
+            Event selectedEvent = lbxEvents.SelectedItem as Event;
+
+            //check if its not null
+            if (selectedEvent != null)
+            {
+                //display tickets for selected event in tickets listbox
+                lbxTickets.ItemsSource = null;
+                lbxTickets.ItemsSource = selectedEvent.Tickets;
+
+            }
+
+
+        }
+
+        private void btnBook_Click(object sender, RoutedEventArgs e)
+        {
+            //read amount required
+            int numberRequired = int.Parse(tbxNumberOfTickets.Text);
+
+            //check availability
+            Ticket selectedTicket = lbxTickets.SelectedItem as Ticket;
+
+            //ensure not null
+            if (selectedTicket != null)
+            {
+                int available = selectedTicket.AvailableTickets;
+
+                if (available >= numberRequired)
+                {
+                    //reduce no of tikcets available
+                    selectedTicket.AvailableTickets -= numberRequired;
+                    MessageBox.Show($"Booking Confirmed for {numberRequired} {selectedTicket.Name} tickets.");
+
+                    //refresh display
+                    lbxTickets.ItemsSource = null;
+                    Event selectedEvent = lbxEvents.SelectedItem as Event;
+
+                    if (selectedEvent != null)
+                    {
+                        lbxTickets.ItemsSource = selectedEvent.Tickets;
+                    }
+
+                    //if available reduce amount available and confirm booking
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show($"Only {available} tickets available for {selectedTicket.Name}. Please reduce number of tickets required");
+                }
+
+                //otherwise infrom user there isnt enough tickets available
+            }
         }
     }
 }

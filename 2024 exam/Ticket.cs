@@ -33,7 +33,7 @@ namespace _2024_exam
         //methods
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{Name} - {Price:C} [AVAILABLE - {AvailableTickets}]";
         }
 
 

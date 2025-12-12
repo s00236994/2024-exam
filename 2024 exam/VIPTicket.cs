@@ -31,7 +31,7 @@ namespace _2024_exam
         //methods
         public override string ToString()
         {
-            return base.ToString();
+            return $"{Name} - {Price + AdditionalCost:C} ({AdditionalExtras}) [AVAILABLE - {AvailableTickets}]";
         }
     }
 }

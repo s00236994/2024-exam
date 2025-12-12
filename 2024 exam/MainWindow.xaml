@@ -23,13 +23,13 @@
         <Label Content="Tickets" Grid.Row="0" Grid.Column="2" Margin="10"  VerticalAlignment="Center"/>
         <TextBox Name="tbxSearch" Text="Search" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
 
-        <ListBox Name="lbxEvents" Grid.Row="1" Margin="10" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <ListBox Name="lbxEvents" Grid.Row="1" Margin="10" Grid.Column="0" Grid.ColumnSpan="2" SelectionChanged="lbxEvents_SelectionChanged"/>
         <ListBox Name="lbxTickets" Grid.Row="1" Margin="10" Grid.Column="2"/>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Margin="10">
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Margin="5">
                 <Label Content="Number of Tickets" Margin="10"/>
-                <TextBox Name="tbxNumberOfTickets" Width="100" Margin="10"/>
-                <Button Name="btnBook" Height="25" Width="100" Content="Book"/>
+                <TextBox Name="tbxNumberOfTickets" Width="100" Margin="5" Height="25"/>
+                <Button Name="btnBook" Height="25" Width="100" Content="Book" Click="btnBook_Click"/>
             </StackPanel>
 
     </Grid>
