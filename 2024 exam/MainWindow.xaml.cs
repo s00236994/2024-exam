@@ -20,6 +20,7 @@ namespace _2024_exam
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Event> events = new List<Event>();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace _2024_exam
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            #region oasis
             //create tickets
             Ticket t1 = new Ticket("Early Bird", 100m, 100);
             Ticket t2 = new Ticket("Platinum Ticket", 150m, 100);
@@ -36,13 +38,30 @@ namespace _2024_exam
             List<Ticket> e1Tickets = new List<Ticket>() { t1, t2, t3 };
 
             //create event
-            Event e1 = new Event()
-            {
-                Name = "Rock Concert",
-                EventDate = new DateTime(2024, 12, 1),
-                Tickets = e1Tickets,
-                TypeOfEvent = EventType.Music
-            };
+            Event e1 = new Event("Oasis Croke Park", new DateTime(2025, 6, 20), e1Tickets, EventType.Music);
+            #endregion oasis
+
+            Ticket t4 = new Ticket("Saturday", 100m, 100);
+            Ticket t5 = new Ticket("Friday", 100m, 100);
+            Ticket t6 = new Ticket("Sunday", 100m, 100);
+            Ticket t7 = new Ticket("Weekend", 200m, 100);
+
+            VIPTicket t8 = new VIPTicket("Weekend Plus", 200m, 50, "includes camping", 100m);
+
+            List<Ticket> e2Tickets = new List<Ticket>() { t4, t5, t6, t7, t8 };
+
+            Event e2 = new Event ("Electric Picnic", new DateTime(2025, 8, 29), e2Tickets, EventType.Music);
+
+            events.Add(e1);
+            events.Add(e2);
+
+            lbxEvents.ItemsSource = events;
+
+
+
+
+
+
         }
     }
 }
