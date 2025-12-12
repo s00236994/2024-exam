@@ -21,6 +21,8 @@ namespace _2024_exam
     public partial class MainWindow : Window
     {
         List<Event> events = new List<Event>();
+        List<Event> filteredEvents = new List<Event>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -122,6 +124,54 @@ namespace _2024_exam
 
                 //otherwise infrom user there isnt enough tickets available
             }
+        }
+
+        private void tbxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbxSearch.Clear();
+        }
+
+        private void tbxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            //read text from screen
+            string searchText = tbxSearch.Text;
+
+            //if no text then display all events
+            if (string.IsNullOrEmpty(searchText))
+            {
+                lbxEvents.ItemsSource = null;
+                lbxEvents.ItemsSource = events;
+
+            }
+
+            else
+            {
+                //clear filtered list
+                filteredEvents.Clear();
+
+                //search for the text in list of events
+                foreach (Event ev in events)
+                {
+                    //if match found add to filtered list
+
+                    if (ev.Name.ToLower().Contains(searchText.ToLower()))
+                    {
+                        filteredEvents.Add(ev);
+                    }
+                }
+
+                //display filtered list
+                lbxEvents.ItemsSource = null;
+                lbxEvents.ItemsSource = filteredEvents;
+
+
+
+
+
+            }
+
+
+
         }
     }
 }

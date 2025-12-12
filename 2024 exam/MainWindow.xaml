@@ -21,7 +21,7 @@
 
         <Label Content="Events" Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Tickets" Grid.Row="0" Grid.Column="2" Margin="10"  VerticalAlignment="Center"/>
-        <TextBox Name="tbxSearch" Text="Search" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+        <TextBox Name="tbxSearch" Text="Search" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" GotFocus="tbxSearch_GotFocus" KeyUp="tbxSearch_KeyUp"/>
 
         <ListBox Name="lbxEvents" Grid.Row="1" Margin="10" Grid.Column="0" Grid.ColumnSpan="2" SelectionChanged="lbxEvents_SelectionChanged"/>
         <ListBox Name="lbxTickets" Grid.Row="1" Margin="10" Grid.Column="2"/>
